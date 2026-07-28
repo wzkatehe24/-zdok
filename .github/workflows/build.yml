@@ -27,7 +27,7 @@ jobs:
     
     - name: Build EXE with PyInstaller
       run: |
-        pyinstaller --onefile --windowed --name "ok-ww-enhanced" main.py
+        pyinstaller --onefile --windowed --name "ok-ww-enhanced" --paths src --add-data "src;src" --add-data "configs;configs" --add-data "combat_config;combat_config" main.py
     
     - name: Upload EXE artifact
       uses: actions/upload-artifact@v4
